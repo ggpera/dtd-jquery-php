@@ -1,0 +1,53 @@
+* {
+  font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeedd;
+  color: #443355;
+}
+
+input {
+  width: 40%;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  padding: 14px;
+}
+ul {
+  list-style-type: none;
+  margin: 32px 0;
+  padding: 0;
+}
+li {
+  font-size: 20px;
+}
+
+#git {
+  color: #443355;
+}
+
+.add-btn {
+  background-color: #55eb7f;
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.add-btn:hover {
+  background-color: #0bd418;
+  color: white;
+}
+.remove-btn {
+  float: right;
+  color: red;
+}
+.remove-btn:hover {
+  filter: brightness(50%);
+}
+.list-group {
+  display: inline-block;
+  width: 50%;
+}
