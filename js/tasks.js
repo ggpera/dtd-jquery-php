@@ -15,7 +15,8 @@ $(document).ready(() => {
               '"><span class="task-text">' +
               task.task +
               '</span>' +
-              ' <span class="remove-btn"><i class="fa fa-trash"></i></span></li>',
+              '<span class="edit-btn"><i class="fa fa-pencil fa-lg"></i></span>' +
+              ' <span class="remove-btn"><i class="fa fa-trash fa-lg"></i></span></li>',
           );
           $('#task-list').append(li);
         });
@@ -65,6 +66,28 @@ $(document).ready(() => {
       },
     });
   });
+
+  // Edit task function
+  $('#task-list').on('click', '.edit-btn', (e) => {
+    const $item = $(e.currentTarget).prev('.task-text');
+    const $taskId = $(e.currentTarget).closest('li').attr('task-id');
+    if ($item.attr('contentEditable') === 'true') {
+      $item.attr('contentEditable', 'false');
+      $item.removeClass('edit-mode');
+      $.ajax({
+        url: './php/edit-task.php',
+        method: 'POST',
+        data: { id: $taskId, task: $item.text() },
+        success: () => {
+          loadTasks();
+        },
+      });
+    } else {
+      $item.attr('contentEditable', 'true');
+      $item.addClass('edit-mode').focus();
+    }
+  });
+
   // Display task list when page is loaded
   loadTasks();
 });
