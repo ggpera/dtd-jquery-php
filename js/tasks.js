@@ -12,7 +12,7 @@ $(document).ready(() => {
           const li = $(
             '<li class="list-group-item" task-id="' +
               task.id +
-              '"><span class="task-text">' +
+              '"><button class="check-btn"><i class="fa fa-check fa-lg"></i></button><span class="task-text">' +
               task.task +
               '</span>' +
               '<span class="edit-btn"><i class="fa fa-pencil fa-lg"></i></span>' +
@@ -87,7 +87,11 @@ $(document).ready(() => {
       $item.addClass('edit-mode').focus();
     }
   });
-
+  const checkItem = (e) => {
+    const $checkItem = $(e.currentTarget).closest('li').find('.task-text');
+    $checkItem.toggleClass('complete');
+  };
+  $('ul').on('click', '.check-btn', checkItem);
   // Display task list when page is loaded
   loadTasks();
 });
