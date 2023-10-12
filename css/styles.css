@@ -7,7 +7,10 @@ body {
   background-color: #eeeedd;
   color: #443355;
 }
-
+button {
+  border: 0;
+  background: none;
+}
 input {
   width: 40%;
   font-size: 16px;
@@ -38,14 +41,27 @@ li {
   border-radius: 4px;
 }
 .add-btn:hover {
-  background-color: #0bd418;
-  color: white;
+  filter: brightness(50%);
 }
 .remove-btn {
   float: right;
   color: red;
 }
 .remove-btn:hover {
+  filter: brightness(50%);
+}
+.edit-btn {
+  margin-left: 8px;
+  float: right;
+  color: rgb(29, 142, 202);
+}
+.edit-btn:hover {
+  filter: brightness(50%);
+}
+.check-btn {
+  color: #55eb7f;
+}
+.check-btn:hover {
   filter: brightness(50%);
 }
 .list-group {
@@ -55,14 +71,11 @@ li {
 .task-text {
   padding: 4px;
   border-radius: 4px;
+  text-decoration: none;
 }
-.edit-btn {
-  margin-left: 8px;
-  float: right;
-  color: rgb(29, 142, 202);
-}
-.edit-btn:hover {
-  filter: brightness(50%);
+
+.complete {
+  text-decoration: line-through;
 }
 
 .edit-mode {
